@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo Genético Passo a Passo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simulação Passo a Passo</h1>
+        
+        <div class="controls">
+            <button onclick="initializePopulation()">1. Iniciar População</button>
+            <button onclick="performSelection()" id="selectionBtn" disabled>2. Seleção</button>
+            <button onclick="performCrossover()" id="crossoverBtn" disabled>3. Crossover</button>
+            <button onclick="performMutation()" id="mutationBtn" disabled>4. Mutação</button>
+            <button onclick="nextGeneration()" id="nextGenBtn" disabled>5. Próxima Geração</button>
+        </div>
+
+        <div class="population-container">
+            <div class="population-section">
+                <h3>População Atual</h3>
+                <div id="currentPopulation" class="population-grid"></div>
+            </div>
+
+            <div class="population-section">
+                <h3>Selecionados para Cruzamento</h3>
+                <div id="selectedParents" class="population-grid"></div>
+            </div>
+
+            <div class="population-section">
+                <h3>Filhos após Crossover</h3>
+                <div id="children" class="population-grid"></div>
+            </div>
+
+            <div class="population-section">
+                <h3>Filhos após Mutação</h3>
+                <div id="mutatedChildren" class="population-grid"></div>
+            </div>
+
+            <div class="population-section next-gen">
+                <h3>Próxima Geração</h3>
+                <div id="nextGeneration" class="population-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
