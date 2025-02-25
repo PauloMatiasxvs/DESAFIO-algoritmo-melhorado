@@ -87,3 +87,20 @@ button:hover:not(:disabled) {
 .next-gen {
     background: #ecf0f1;
 }
+.crossover-control {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+}
+
+#crossoverType {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    background: white;
+    font-size: 0.9em;
+}

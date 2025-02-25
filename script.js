@@ -67,16 +67,36 @@ function performSelection() {
 }
 
 function performCrossover() {
-    // Crossover Aritmético
+    const crossoverType = document.getElementById('crossoverType').value;
     const [pai1, pai2] = selectedParents;
-    children = Array.from({ length: 2 }, () => 
-        new Besouro(
-            Math.round((pai1.R + pai2.R) / 2),
-            Math.round((pai1.G + pai2.G) / 2),
-            Math.round((pai1.B + pai2.B) / 2)
-        )
-    );
-    
+
+    children = Array.from({ length: 2 }, () => {
+        switch(crossoverType) {
+            case 'umponto':
+                const point = Math.random() < 0.5 ? 'R' : 'G';
+                return new Besouro(
+                    point === 'R' ? pai1.R : pai2.R,
+                    point === 'G' ? pai1.G : pai2.G,
+                    Math.random() < 0.5 ? pai1.B : pai2.B
+                );
+
+            case 'uniforme':
+                return new Besouro(
+                    Math.random() < 0.5 ? pai1.R : pai2.R,
+                    Math.random() < 0.5 ? pai1.G : pai2.G,
+                    Math.random() < 0.5 ? pai1.B : pai2.B
+                );
+
+            case 'aritmetico':
+            default:
+                return new Besouro(
+                    Math.round((pai1.R + pai2.R) / 2),
+                    Math.round((pai1.G + pai2.G) / 2),
+                    Math.round((pai1.B + pai2.B) / 2)
+                );
+        }
+    });
+
     updateButtonStates();
     displayPopulation(children, 'children');
 }
