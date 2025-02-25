@@ -13,6 +13,12 @@
         <div class="controls">
             <button onclick="initializePopulation()">1. Iniciar População</button>
             <button onclick="performSelection()" id="selectionBtn" disabled>2. Seleção</button>
+            <div class="crossover-control">
+                <select id="crossoverType">
+                    <option value="aritmetico">Crossover Aritmético</option>
+                    <option value="umponto">Crossover Um Ponto</option>
+                    <option value="uniforme">Crossover Uniforme</option>
+                </select>
             <button onclick="performCrossover()" id="crossoverBtn" disabled>3. Crossover</button>
             <button onclick="performMutation()" id="mutationBtn" disabled>4. Mutação</button>
             <button onclick="nextGeneration()" id="nextGenBtn" disabled>5. Próxima Geração</button>
